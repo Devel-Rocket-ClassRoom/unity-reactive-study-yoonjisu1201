@@ -22,7 +22,30 @@ public class MyAsyncDemo : MonoBehaviour
     private int m_SequentialCount;
     private int m_DropCount;
 
-    private void Start() { }
+    private void Start() 
+    {
+        m_SequentialButton
+            .OnClickAsObservable()
+            .SubscribeAwait(async (_, ct) =>
+            {
+                int id = ++m_SequentialCount;
+                Log($"[순차] 로드 #{id} 시작...");
+                await FakeLoadAsync(ct);
+                Log($"[순차] 로드 #{id} 완료...");
+            },AwaitOperation.Sequential)
+            .AddTo(this);
+
+        m_DropButton
+            .OnClickAsObservable()
+            .SubscribeAwait(async (_, ct) =>
+            {
+                int id = ++m_DropCount;
+                Log($"[드롭] 로드 #{id} 시작...");
+                await FakeLoadAsync(ct);
+                Log($"[드롭] 로드 #{id} 완료...");
+            }, AwaitOperation.Drop)
+            .AddTo(this);
+    }
 
     private static async UniTask FakeLoadAsync(CancellationToken ct)
     {

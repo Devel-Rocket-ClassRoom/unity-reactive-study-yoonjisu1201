@@ -2546,7 +2546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'MP : 50'
+  m_text: 'MP : ?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 270f45fa478b45147abdd9aa3582ec2d, type: 2}
   m_sharedMaterial: {fileID: 7699325634275088880, guid: 270f45fa478b45147abdd9aa3582ec2d, type: 2}
@@ -8804,7 +8804,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'HP : 100'
+  m_text: 'HP : ?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 270f45fa478b45147abdd9aa3582ec2d, type: 2}
   m_sharedMaterial: {fileID: 7699325634275088880, guid: 270f45fa478b45147abdd9aa3582ec2d, type: 2}
